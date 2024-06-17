@@ -21,6 +21,9 @@ public class ChasiSubsystem extends SubsystemBase {
     FL = new WPI_TalonFX(2);
     RL = new WPI_TalonFX(21);
     RR = new WPI_TalonFX(11);
+
+    FL.setInverted(true);
+    RL.setInverted(true);
   }
   
   public void drive(double speedL, double speedR){
