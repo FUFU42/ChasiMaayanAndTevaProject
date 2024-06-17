@@ -27,10 +27,12 @@ public class ChasiSubsystem extends SubsystemBase {
   }
   
   public void drive(double speedL, double speedR){
-    FR.set(speedR);
-    FL.set(speedL);
-    RL.set(speedL);
-    RR.set(speedR);
+    if(!(Math.abs(speedL) < 0.1 || Math.abs(speedR) < 0.1)){
+      FR.set(speedR);
+      FL.set(speedL);
+      RL.set(speedL);
+      RR.set(speedR);
+    }
   }
 
   public void stop(){
